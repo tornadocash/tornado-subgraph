@@ -64,4 +64,4 @@ dataSources:
           handler: handleDeposit
         - event: Withdrawal(address,bytes32,indexed address,uint256)
           handler: handleWithdrawal
-      file: ./src/mapping-instance.ts
+      file: ./src/mapping-proxy.ts
