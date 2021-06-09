@@ -1,22 +1,19 @@
-const fs = require('fs');
-const path = require('path');
-
 const Contracts = require('./contracts');
-const { createStartBlock } = require('../common');
 
 module.exports = {
   createYaml: (env) => {
 
-    const createProxyBlock = ({ name, startBlocks, address }) => ({
+    const createProxyBlock = ({ name, address }) => ({
       name,
       mappingFile: '../src/mapping-encrypted-note.ts',
-      startBlock: createStartBlock(startBlocks, env),
+      abi: 'Proxy',
+      startBlock: 7941563,
       address,
       entities: ['EncryptedNote'],
       abis: [
         {
           event: 'Proxy',
-          file: '../abis/Proxy.json'
+          path: '../abis/Proxy.json'
         }
       ],
       events: [
@@ -27,8 +24,8 @@ module.exports = {
       ],
     });
 
-    return Contracts.map(({ type, prod, test, name, address }) => {
-      const startBlocks = { prod, test };
+    return Contracts.map(({ prod, name, address }) => {
+      const startBlocks = { prod };
 
       return createProxyBlock({ name, startBlocks, address })
     });
