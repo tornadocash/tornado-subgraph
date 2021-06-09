@@ -1,7 +1,7 @@
-import { Withdrawal, Deposit } from '../generated'
-import { Withdrawal as WithdrawalEntity, Deposit as DepositEntity } from '../generated/schema'
+import { Withdrawal, Deposit } from '../generated';
+import { Withdrawal as WithdrawalEntity, Deposit as DepositEntity } from '../generated/schema';
 
-import { contractsToInstances } from './contractsToInstances'
+import { contractsToInstances } from './contractsToInstances';
 
 export function handleWithdrawal(event: Withdrawal): void {
   let entity = new WithdrawalEntity(event.transaction.hash.toHex() + '-' + event.logIndex.toString());
@@ -23,7 +23,7 @@ export function handleWithdrawal(event: Withdrawal): void {
 }
 
 export function handleDeposit(event: Deposit): void {
-  let entity = new DepositEntity(event.transaction.hash.toHex() + '-' + event.logIndex.toString())
+  let entity = new DepositEntity(event.transaction.hash.toHex() + '-' + event.logIndex.toString());
 
   let result = contractsToInstances.get(event.address.toHexString()).split('-');
 
@@ -36,5 +36,5 @@ export function handleDeposit(event: Deposit): void {
   entity.commitment = event.params.commitment;
   entity.transactionHash = event.transaction.hash;
 
-  entity.save()
+  entity.save();
 }

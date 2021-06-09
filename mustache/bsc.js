@@ -1,4 +1,3 @@
-
 module.exports = {
   base: {
     specVersion: '0.0.2',
@@ -11,7 +10,7 @@ module.exports = {
       name: 'Instance',
       network: 'bsc',
       dataSourceKind: 'ethereum/contract',
-      address: "0x5D595DB16eb6d074E0e7E7f0bE37E7e75f23BEc7",
+      address: '0x5D595DB16eb6d074E0e7E7f0bE37E7e75f23BEc7',
       abi: 'Instance',
       startBlock: 7941563,
       mapping: {
@@ -31,16 +30,16 @@ module.exports = {
           {
             event: 'Withdrawal(address,bytes32,indexed address,uint256)',
             handler: 'handleWithdrawal',
-          }
+          },
         ],
         file: './src/mapping-proxy.ts',
-      }
+      },
     },
     {
       name: 'Echoer',
       network: 'bsc',
       dataSourceKind: 'ethereum/contract',
-      address: "0x60eaCBd5535ADB86955A0154E44Aded78F161643",
+      address: '0x60eaCBd5535ADB86955A0154E44Aded78F161643',
       abi: 'Echoer',
       startBlock: 7941563,
       mapping: {
@@ -59,12 +58,12 @@ module.exports = {
           },
         ],
         file: './src/mapping-echo-account.ts',
-      }
+      },
     },
     {
       name: 'Proxy',
       dataSourceKind: 'ethereum/contract',
-      address: "0x0Ce22770451A8acAD1220D9d1678656b4fAe4a1d",
+      address: '0x0Ce22770451A8acAD1220D9d1678656b4fAe4a1d',
       abi: 'Proxy',
       startBlock: 7941563,
       mapping: {
@@ -83,7 +82,7 @@ module.exports = {
           },
         ],
         file: './src/mapping-encrypted-note.ts',
-      }
+      },
     },
   ],
 };

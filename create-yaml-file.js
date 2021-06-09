@@ -21,9 +21,7 @@ program
     const dataSourcesPath = path.join(__dirname, 'mustache', 'templates', subgraph, 'create-yaml.js');
 
     const subgraphDataSourcesData = require(dataSourcesPath);
-    const dataSourcesData = [
-      ...subgraphDataSourcesData.createYaml(env),
-    ];
+    const dataSourcesData = [...subgraphDataSourcesData.createYaml(env)];
 
     const indexData = require(baseIndexPath);
 

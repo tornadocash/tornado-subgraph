@@ -1,5 +1,5 @@
-import { EncryptedNote } from '../generated'
-import { EncryptedNote as EncryptedNoteEntity } from '../generated/schema'
+import { EncryptedNote } from '../generated';
+import { EncryptedNote as EncryptedNoteEntity } from '../generated/schema';
 
 export function handleEncryptedNote(event: EncryptedNote): void {
   let entity = new EncryptedNoteEntity(event.transaction.hash.toHex() + '-' + event.logIndex.toString());

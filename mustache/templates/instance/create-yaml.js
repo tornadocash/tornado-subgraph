@@ -5,7 +5,6 @@ const Contracts = require('./contracts');
 
 module.exports = {
   createYaml: (env) => {
-
     const createInstanceBlock = ({ name, network, startBlocks, address }) => ({
       name,
       network,
@@ -17,8 +16,8 @@ module.exports = {
       abis: [
         {
           name: 'Instance',
-          path: '../abis/Instance.json'
-        }
+          path: '../abis/Instance.json',
+        },
       ],
       events: [
         {
@@ -28,7 +27,7 @@ module.exports = {
         {
           event: 'Withdrawal(address,bytes32,indexed address,uint256)',
           handler: 'handleWithdrawal',
-        }
+        },
       ],
     });
 
@@ -51,8 +50,8 @@ module.exports = {
     return Contracts.map(({ prod, name, network, address }) => {
       const startBlocks = { prod };
       if (network === env) {
-        return createInstanceBlock({ name, startBlocks, network, address })
+        return createInstanceBlock({ name, startBlocks, network, address });
       }
-    }).filter(e => e !== undefined);
+    }).filter((e) => e !== undefined);
   },
 };
