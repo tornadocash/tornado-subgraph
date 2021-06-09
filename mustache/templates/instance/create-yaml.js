@@ -6,8 +6,9 @@ const Contracts = require('./contracts');
 module.exports = {
   createYaml: (env) => {
 
-    const createInstanceBlock = ({ name, startBlocks, address }) => ({
+    const createInstanceBlock = ({ name, network, startBlocks, address }) => ({
       name,
+      network,
       mappingFile: '../src/mapping-instance.ts',
       startBlock: startBlocks.prod,
       address,
@@ -16,7 +17,7 @@ module.exports = {
       abis: [
         {
           name: 'Instance',
-          file: '../abis/Instance.json'
+          path: '../abis/Instance.json'
         }
       ],
       events: [

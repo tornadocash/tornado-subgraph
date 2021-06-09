@@ -6,6 +6,8 @@
     "build": "graph build",
     "yaml:proxy": "node ./create-yaml-file create-yaml -s proxy -e bsc | mustache - mustache/yaml.mustache > subgraphs/proxy-tornado-subgraph.yaml",
     "yaml:instance": "node ./create-yaml-file create-yaml -s instance -e bsc | mustache - mustache/yaml.mustache > subgraphs/instance-tornado-subgraph.yaml",
+    "codegen:proxy": "yarn yaml:proxy && yarn codegen -- subgraphs/proxy-tornado-subgraph.yaml",
+    "codegen:instance": "yarn yaml:instance && yarn codegen -- subgraphs/instance-tornado-subgraph.yaml",
     "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ tornadocash/bsc-tornado-subgraph"
   },
   "dependencies": {
