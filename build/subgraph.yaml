@@ -1,67 +1,29 @@
 specVersion: 0.0.2
+description: Instance
+repository: https://github.com/tornadocash/tornado-subgraph
 schema:
   file: schema.graphql
 dataSources:
-  - kind: ethereum/contract
-    name: Proxy
-    network: bsc
-    source:
-      address: "0x5D595DB16eb6d074E0e7E7f0bE37E7e75f23BEc7"
-      abi: Proxy
-      startBlock: 7941563
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.4
-      language: wasm/assemblyscript
-      entities:
-        - EncryptedNote
-      abis:
-        - name: Proxy
-          file: Proxy/abis/Proxy.json
-      eventHandlers:
-        - event: EncryptedNote(indexed address,bytes)
-          handler: handleEncryptedNote
-      file: Proxy/Proxy.wasm
-  - kind: ethereum/contract
-    name: Echoer
-    network: bsc
-    source:
-      address: "0x60eaCBd5535ADB86955A0154E44Aded78F161643"
-      abi: Echoer
-      startBlock: 7941563
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.4
-      language: wasm/assemblyscript
-      entities:
-        - NoteAccount
-      abis:
-        - name: Echoer
-          file: Echoer/abis/Echoer.json
-      eventHandlers:
-        - event: Echo(indexed address,bytes)
-          handler: handleEcho
-      file: Echoer/Echoer.wasm
   - kind: ethereum/contract
     name: Instance
     network: bsc
     source:
       address: "0x0Ce22770451A8acAD1220D9d1678656b4fAe4a1d"
       abi: Instance
-      startBlock: 7941563
+      startBlock: 7942402
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
       language: wasm/assemblyscript
+      file: Instance/Instance.wasm
       entities:
         - Deposit
         - Withdrawal
       abis:
         - name: Instance
-          file: Instance/abis/Instance.json
+          file: abis/Instance.json
       eventHandlers:
         - event: Deposit(indexed bytes32,uint32,uint256)
           handler: handleDeposit
         - event: Withdrawal(address,bytes32,indexed address,uint256)
           handler: handleWithdrawal
-      file: Instance/Instance.wasm
