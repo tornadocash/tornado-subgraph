@@ -4,7 +4,7 @@
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "yaml:proxy": "node ./create-yaml-file create-yaml -s proxy -e prod | mustache - mustache/yaml.mustache > subgraphs/proxy-tornado-subgraph.yaml",
+    "yaml:proxy": "node ./create-yaml-file create-yaml -s proxy -e bsc | mustache - mustache/yaml.mustache > subgraphs/proxy-tornado-subgraph.yaml",
     "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ tornadocash/bsc-tornado-subgraph"
   },
   "dependencies": {
