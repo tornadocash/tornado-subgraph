@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 
 const Contracts = require('./contracts');
-const { createStartBlock } = require('../common');
 
 module.exports = {
   createYaml: (env) => {
@@ -10,13 +9,14 @@ module.exports = {
     const createInstanceBlock = ({ name, startBlocks, address }) => ({
       name,
       mappingFile: '../src/mapping-instance.ts',
-      startBlock: createStartBlock(startBlocks, env),
+      startBlock: startBlocks.prod,
       address,
+      abi: 'Instance',
       entities: ['Deposit', 'Withdrawal'],
       abis: [
         {
           name: 'Instance',
-          file: './abis/Instance.json'
+          file: '../abis/Instance.json'
         }
       ],
       events: [
@@ -47,10 +47,11 @@ module.exports = {
     const targetFile = path.join(__dirname, '../../../src/', 'contractsToInstances.ts');
     fs.writeFileSync(targetFile, contractsToInstancesContent, 'utf8');
 
-    return Contracts.map(({ type, prod, test, name, address }) => {
-      const startBlocks = { prod, test };
-
-      return createInstanceBlock({ name, startBlocks, address })
-    });
+    return Contracts.map(({ prod, name, network, address }) => {
+      const startBlocks = { prod };
+      if (network === env) {
+        return createInstanceBlock({ name, startBlocks, network, address })
+      }
+    }).filter(e => e !== undefined);
   },
 };
