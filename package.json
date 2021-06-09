@@ -10,7 +10,9 @@
     "build": "graph build",
     "build:proxy": "graph build subgraphs/proxy-tornado-subgraph.yaml",
     "build:instance": "graph build subgraphs/instance-tornado-subgraph.yaml",
-    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ tornadocash/bsc-tornado-subgraph"
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ tornadocash/bsc-tornado-subgraph",
+    "deploy:proxy": "yarn deploy -- tornadocash/bsc-tornado-subgraph ubgraphs/proxy-tornado-subgraph.yaml",
+    "deploy:instance": "yarn deploy -- tornadocash/bsc-tornado-subgraph subgraphs/instance-tornado-subgraph.yaml"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.20.0",
