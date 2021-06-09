@@ -12,8 +12,8 @@ program
   )
   .option(
     '-e, --env <value>',
-    'defaults to "prod" and uses the prod start blocks config. Must set to "test" to use test start blocks config',
-    'prod',
+    'defaults to "bsc" and uses the bsc start blocks config. Must set to "goerli" to use test start blocks config',
+    'bsc',
   )
   .action(async ({ subgraph, env }) => {
     const baseIndexPath = path.join(__dirname, 'mustache', 'templates', 'base', 'index.js');

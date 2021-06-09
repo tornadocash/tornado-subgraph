@@ -3,8 +3,9 @@ const Contracts = require('./contracts');
 module.exports = {
   createYaml: (env) => {
 
-    const createProxyBlock = ({ name, address }) => ({
+    const createProxyBlock = ({ name, network, address }) => ({
       name,
+      network,
       mappingFile: '../src/mapping-encrypted-note.ts',
       abi: 'Proxy',
       startBlock: 7941563,
@@ -24,10 +25,11 @@ module.exports = {
       ],
     });
 
-    return Contracts.map(({ prod, name, address }) => {
+    return Contracts.map(({ prod, name, network, address }) => {
       const startBlocks = { prod };
-
-      return createProxyBlock({ name, startBlocks, address })
-    });
+      if (network === env) {
+        return createProxyBlock({ name, startBlocks, network, address })
+      }
+    }).filter(e => e !== undefined);
   },
 };
