@@ -1,5 +1,5 @@
-import { Echo } from '../generated'
-import { NoteAccount as NoteAccountEntity } from '../generated/schema'
+import { Echo } from '../generated';
+import { NoteAccount as NoteAccountEntity } from '../generated/schema';
 
 export function handleEcho(event: Echo): void {
   let entity = new NoteAccountEntity(event.transaction.hash.toHex() + '-' + event.logIndex.toString());

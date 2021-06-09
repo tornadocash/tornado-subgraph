@@ -2,6 +2,7 @@
   "name": "sub-graph-proxy",
   "license": "UNLICENSED",
   "scripts": {
+    "lint": "eslint .",
     "yaml:proxy": "node ./create-yaml-file create-yaml -s proxy -e bsc | mustache - mustache/yaml.mustache > subgraphs/proxy-tornado-subgraph.yaml",
     "yaml:instance": "node ./create-yaml-file create-yaml -s instance -e bsc | mustache - mustache/yaml.mustache > subgraphs/instance-tornado-subgraph.yaml",
     "codegen": "graph codegen",
@@ -19,7 +20,16 @@
     "@graphprotocol/graph-ts": "0.20.0"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.26.1",
+    "@typescript-eslint/parser": "^4.26.1",
     "commander": "^7.2.0",
-    "mustache": "^4.2.0"
+    "eslint": "^7.28.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "mustache": "^4.2.0",
+    "prettier": "^2.3.1",
+    "typescript": "^4.3.2"
   }
 }
