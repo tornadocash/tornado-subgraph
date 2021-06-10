@@ -5,12 +5,12 @@ const Contracts = require('./contracts');
 
 module.exports = {
   createYaml: (env) => {
-    const createInstanceBlock = ({ name, network, startBlocks, address }) => ({
-      name,
+    const createInstanceBlock = ({ name, amount, currency, network, startBlocks, address }) => ({
+      name: `${name}-${amount}-${currency}`,
       network,
       mappingFile: '../src/mapping-instance.ts',
       startBlock: startBlocks.prod,
-      address,
+      address: `"${address}"`,
       abi: 'Instance',
       entities: ['Deposit', 'Withdrawal'],
       abis: [
@@ -39,7 +39,7 @@ module.exports = {
 
     Contracts.forEach(({ address, name, amount, currency }) => {
       if (address != null) {
-        contractsToInstancesContent += `contractsToInstances.set(${address.toLowerCase()},${space}//${space}${name}-${currency}-${amount}${newLine}${doubleSpace}"${amount}${'-'}${currency}"${newLine});${newLine}`;
+        contractsToInstancesContent += `contractsToInstances.set("${address.toLowerCase()}",${space}//${space}${name}-${currency}-${amount}${newLine}${doubleSpace}"${amount}${'-'}${currency}"${newLine});${newLine}`;
       }
     });
 
@@ -47,10 +47,10 @@ module.exports = {
     const targetFile = path.join(__dirname, '../../../src/', 'contractsToInstances.ts');
     fs.writeFileSync(targetFile, contractsToInstancesContent, 'utf8');
 
-    return Contracts.map(({ prod, name, network, address }) => {
+    return Contracts.map(({ prod, name, amount, currency, network, address }) => {
       const startBlocks = { prod };
       if (network === env) {
-        return createInstanceBlock({ name, startBlocks, network, address });
+        return createInstanceBlock({ name, startBlocks, amount, currency, network, address });
       }
     }).filter((e) => e !== undefined);
   },
