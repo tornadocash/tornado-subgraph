@@ -1,4 +1,4 @@
-import { Echo } from '../generated';
+import { Echo } from '../generated/Echoer/Echoer';
 import { NoteAccount as NoteAccountEntity } from '../generated/schema';
 
 export function handleEcho(event: Echo): void {

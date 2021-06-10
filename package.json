@@ -9,8 +9,8 @@
     "codegen:tornado": "yarn yaml:tornado && yarn codegen -- subgraphs/tornado-subgraph.yaml",
     "build": "graph build",
     "build:tornado": "graph build subgraphs/tornado-subgraph.yaml",
-    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ $(echo $(cat .env))",
-    "deploy:tornado": "yarn deploy -- tornadocash/bsc-tornado-subgraph subgraphs/tornado-subgraph.yaml"
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ --access-token TOKEN",
+    "deploy:tornado": "yarn deploy -- 0xzick/bsc-sub-graph subgraphs/tornado-subgraph.yaml"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.20.0",

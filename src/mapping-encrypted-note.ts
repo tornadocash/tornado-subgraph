@@ -1,4 +1,4 @@
-import { EncryptedNote } from '../generated';
+import { EncryptedNote } from '../generated/Proxy/Proxy';
 import { EncryptedNote as EncryptedNoteEntity } from '../generated/schema';
 
 export function handleEncryptedNote(event: EncryptedNote): void {

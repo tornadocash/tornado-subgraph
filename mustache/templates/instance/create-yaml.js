@@ -39,7 +39,7 @@ module.exports = {
 
     Contracts.forEach(({ address, name, amount, currency }) => {
       if (address != null) {
-        contractsToInstancesContent += `contractsToInstances.set("${address.toLowerCase()}",${space}//${space}${name}-${currency}-${amount}${newLine}${doubleSpace}"${amount}${'-'}${currency}"${newLine});${newLine}`;
+        contractsToInstancesContent += `contractsToInstances.set("${address.toLowerCase()}",${space}//${space}${name}-${currency}-${amount}${newLine}${doubleSpace}"${currency}${'-'}${amount}"${newLine});${newLine}`;
       }
     });
 
