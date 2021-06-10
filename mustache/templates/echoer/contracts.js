@@ -1,9 +1,9 @@
 const contracts = [
   {
-    prod: 8158799,
+    prod: 8159269,
     network: 'bsc',
     name: 'Echoer',
-    address: '0x0D5550d52428E7e3175bfc9550207e4ad3859b17',
+    address: '0xa75BF2815618872f155b7C4B0C81bF990f5245E4',
   },
 ];
 
