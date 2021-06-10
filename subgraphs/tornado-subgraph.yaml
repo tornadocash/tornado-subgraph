@@ -1,9 +1,9 @@
-specVersion: 0.0.2
-description: Proxy
-repository: https://github.com/tornadocash/tornado-subgraph
-schema:
-  file: schema.graphql
-dataSources:
+  specVersion: 0.0.2
+  description: Proxy
+  repository: https://github.com/tornadocash/tornado-subgraph
+  schema:
+    file: ../schema.graphql
+  dataSources:
   - kind: ethereum/contract
     name: Echoer
     network: bsc
@@ -15,12 +15,12 @@ dataSources:
       kind: ethereum/events
       apiVersion: 0.0.4
       language: wasm/assemblyscript
-      file: Echoer/Echoer.wasm
+      file: ../src/mapping-echo-account.ts
       entities:
         - NoteAccount
       abis:
         - name: Echoer
-          file: abis/Echoer.json
+          file: ../abis/Echoer.json
       eventHandlers:
         - event: Echo(indexed address,bytes)
           handler: handleEcho
@@ -35,13 +35,13 @@ dataSources:
       kind: ethereum/events
       apiVersion: 0.0.4
       language: wasm/assemblyscript
-      file: Instance-0.1-bnb/Instance-0.1-bnb.wasm
+      file: ../src/mapping-instance.ts
       entities:
         - Deposit
         - Withdrawal
       abis:
         - name: Instance
-          file: abis/Instance.json
+          file: ../abis/Instance.json
       eventHandlers:
         - event: Deposit(indexed bytes32,uint32,uint256)
           handler: handleDeposit
@@ -58,13 +58,13 @@ dataSources:
       kind: ethereum/events
       apiVersion: 0.0.4
       language: wasm/assemblyscript
-      file: Instance-0.1-bnb/Instance-0.1-bnb.wasm
+      file: ../src/mapping-instance.ts
       entities:
         - Deposit
         - Withdrawal
       abis:
         - name: Instance
-          file: abis/Instance.json
+          file: ../abis/Instance.json
       eventHandlers:
         - event: Deposit(indexed bytes32,uint32,uint256)
           handler: handleDeposit
@@ -81,13 +81,13 @@ dataSources:
       kind: ethereum/events
       apiVersion: 0.0.4
       language: wasm/assemblyscript
-      file: Instance-0.1-bnb/Instance-0.1-bnb.wasm
+      file: ../src/mapping-instance.ts
       entities:
         - Deposit
         - Withdrawal
       abis:
         - name: Instance
-          file: abis/Instance.json
+          file: ../abis/Instance.json
       eventHandlers:
         - event: Deposit(indexed bytes32,uint32,uint256)
           handler: handleDeposit
@@ -104,13 +104,13 @@ dataSources:
       kind: ethereum/events
       apiVersion: 0.0.4
       language: wasm/assemblyscript
-      file: Instance-0.1-bnb/Instance-0.1-bnb.wasm
+      file: ../src/mapping-instance.ts
       entities:
         - Deposit
         - Withdrawal
       abis:
         - name: Instance
-          file: abis/Instance.json
+          file: ../abis/Instance.json
       eventHandlers:
         - event: Deposit(indexed bytes32,uint32,uint256)
           handler: handleDeposit
@@ -127,12 +127,12 @@ dataSources:
       kind: ethereum/events
       apiVersion: 0.0.4
       language: wasm/assemblyscript
-      file: Proxy/Proxy.wasm
+      file: ../src/mapping-encrypted-note.ts
       entities:
         - EncryptedNote
       abis:
         - name: Proxy
-          file: abis/Proxy.json
+          file: ../abis/Proxy.json
       eventHandlers:
         - event: EncryptedNote(indexed address,bytes)
           handler: handleEncryptedNote

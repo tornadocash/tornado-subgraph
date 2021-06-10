@@ -8,7 +8,7 @@ module.exports = {
       mappingFile: '../src/mapping-encrypted-note.ts',
       abi: 'Proxy',
       startBlock: 7941563,
-      address,
+      address: `"${address}"`,
       entities: ['EncryptedNote'],
       abis: [
         {
