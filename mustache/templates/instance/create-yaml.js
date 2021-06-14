@@ -36,16 +36,23 @@ module.exports = {
     const space = '\xa0';
     const doubleSpace = space + space;
     let contractsToInstancesContent = `${readOnlyComment}export let contractsToInstances = new Map<string, string>();${newLine}`;
+    let reExportContent = '';
 
-    Contracts.forEach(({ address, name, amount, currency }) => {
+    Contracts.forEach(({ address, name, network, amount, currency }) => {
       if (address != null) {
         contractsToInstancesContent += `contractsToInstances.set("${address.toLowerCase()}",${space}//${space}${name}-${currency}-${amount}${newLine}${doubleSpace}"${currency}${'-'}${amount}"${newLine});${newLine}`;
+      }
+      if (network === env && reExportContent === '') {
+        reExportContent += `${readOnlyComment}${newLine}export * from "./${name}-${amount}-${currency}/Instance";${newLine}`;
       }
     });
 
     contractsToInstancesContent += readOnlyComment;
     const targetFile = path.join(__dirname, '../../../src/', 'contractsToInstances.ts');
     fs.writeFileSync(targetFile, contractsToInstancesContent, 'utf8');
+
+    const targetIndexFile = path.join(__dirname, '../../../generated/', 'index.ts');
+    fs.writeFileSync(targetIndexFile, reExportContent, 'utf8');
 
     return Contracts.map(({ prod, name, amount, currency, network, address }) => {
       const startBlocks = { prod };

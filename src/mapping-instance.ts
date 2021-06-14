@@ -1,4 +1,4 @@
-import { Withdrawal, Deposit } from '../generated/Instance-1-bnb/Instance';
+import { Withdrawal, Deposit } from '../generated';
 import { Withdrawal as WithdrawalEntity, Deposit as DepositEntity } from '../generated/schema';
 
 import { contractsToInstances } from './contractsToInstances';
