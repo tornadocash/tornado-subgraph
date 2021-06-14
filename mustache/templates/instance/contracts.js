@@ -39,6 +39,38 @@ const contracts = [
     name: 'Instance',
     address: '0x992A81FA34aa6ecD9520F39f858abc51fee6994a',
   },
+  {
+    prod: 9116966,
+    amount: '0.1',
+    network: 'mainnet',
+    currency: 'eth',
+    name: 'Instance',
+    address: '0x12D66f87A04A9E220743712cE6d9bB1B5616B8Fc',
+  },
+  {
+    prod: 9116966,
+    amount: '1',
+    network: 'mainnet',
+    currency: 'eth',
+    name: 'Instance',
+    address: '0x47CE0C6eD5B0Ce3d3A51fdb1C52DC66a7c3c2936',
+  },
+  {
+    prod: 9116966,
+    amount: '10',
+    network: 'mainnet',
+    currency: 'eth',
+    name: 'Instance',
+    address: '0x910Cbd523D972eb0a6f4cAe4618aD62622b39DbF',
+  },
+  {
+    prod: 9116966,
+    amount: '100',
+    network: 'mainnet',
+    currency: 'eth',
+    name: 'Instance',
+    address: '0xA160cdAB225685dA1d56aa342Ad8841c3b53f291',
+  },
 ];
 
 module.exports = contracts;
