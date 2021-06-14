@@ -11,6 +11,12 @@ const contracts = [
     network: 'matic',
     address: '0xDC16d16341A62c60E7C9889F9d1FcE4cde57a90F',
   },
+  {
+    prod: 11474713,
+    name: 'Proxy',
+    network: 'mainnet',
+    address: '0x722122dF12D4e14e13Ac3b6895a86e84145b6967',
+  },
 ];
 
 module.exports = contracts;

@@ -1,0 +1,138 @@
+  specVersion: 0.0.2
+  description: Proxy
+  repository: https://github.com/tornadocash/tornado-subgraph
+  schema:
+    file: ../schema.graphql
+  dataSources:
+  - kind: ethereum/contract
+    name: Echoer
+    network: mainnet
+    source:
+      address: "0x756C4628E57F7e7f8a459EC2752968360Cf4D1AA"
+      abi: Echoer
+      startBlock: 11362619
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ../src/mapping-echo-account.ts
+      entities:
+        - NoteAccount
+      abis:
+        - name: Echoer
+          file: ../abis/Echoer.json
+      eventHandlers:
+        - event: Echo(indexed address,bytes)
+          handler: handleEcho
+  - kind: ethereum/contract
+    name: Instance-0.1-eth
+    network: mainnet
+    source:
+      address: "0x12D66f87A04A9E220743712cE6d9bB1B5616B8Fc"
+      abi: Instance
+      startBlock: 9116966
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ../src/mapping-instance.ts
+      entities:
+        - Deposit
+        - Withdrawal
+      abis:
+        - name: Instance
+          file: ../abis/Instance.json
+      eventHandlers:
+        - event: Deposit(indexed bytes32,uint32,uint256)
+          handler: handleDeposit
+        - event: Withdrawal(address,bytes32,indexed address,uint256)
+          handler: handleWithdrawal
+  - kind: ethereum/contract
+    name: Instance-1-eth
+    network: mainnet
+    source:
+      address: "0x47CE0C6eD5B0Ce3d3A51fdb1C52DC66a7c3c2936"
+      abi: Instance
+      startBlock: 9116966
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ../src/mapping-instance.ts
+      entities:
+        - Deposit
+        - Withdrawal
+      abis:
+        - name: Instance
+          file: ../abis/Instance.json
+      eventHandlers:
+        - event: Deposit(indexed bytes32,uint32,uint256)
+          handler: handleDeposit
+        - event: Withdrawal(address,bytes32,indexed address,uint256)
+          handler: handleWithdrawal
+  - kind: ethereum/contract
+    name: Instance-10-eth
+    network: mainnet
+    source:
+      address: "0x910Cbd523D972eb0a6f4cAe4618aD62622b39DbF"
+      abi: Instance
+      startBlock: 9116966
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ../src/mapping-instance.ts
+      entities:
+        - Deposit
+        - Withdrawal
+      abis:
+        - name: Instance
+          file: ../abis/Instance.json
+      eventHandlers:
+        - event: Deposit(indexed bytes32,uint32,uint256)
+          handler: handleDeposit
+        - event: Withdrawal(address,bytes32,indexed address,uint256)
+          handler: handleWithdrawal
+  - kind: ethereum/contract
+    name: Instance-100-eth
+    network: mainnet
+    source:
+      address: "0xA160cdAB225685dA1d56aa342Ad8841c3b53f291"
+      abi: Instance
+      startBlock: 9116966
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ../src/mapping-instance.ts
+      entities:
+        - Deposit
+        - Withdrawal
+      abis:
+        - name: Instance
+          file: ../abis/Instance.json
+      eventHandlers:
+        - event: Deposit(indexed bytes32,uint32,uint256)
+          handler: handleDeposit
+        - event: Withdrawal(address,bytes32,indexed address,uint256)
+          handler: handleWithdrawal
+  - kind: ethereum/contract
+    name: Proxy
+    network: mainnet
+    source:
+      address: "0x722122dF12D4e14e13Ac3b6895a86e84145b6967"
+      abi: Proxy
+      startBlock: 11474713
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ../src/mapping-encrypted-note.ts
+      entities:
+        - EncryptedNote
+      abis:
+        - name: Proxy
+          file: ../abis/Proxy.json
+      eventHandlers:
+        - event: EncryptedNote(indexed address,bytes)
+          handler: handleEncryptedNote

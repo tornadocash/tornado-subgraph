@@ -1,0 +1,25 @@
+name: Commit notification
+
+on:
+  push:
+    branches: ['*']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set short SHA
+        id: vars
+        run: echo "::set-output name=sha_short::$(echo ${GITHUB_SHA:0:7})"
+      - name: Telegram Notification
+        uses: appleboy/telegram-action@0.0.7
+        with:
+          message: 'A new commit [${{ steps.vars.outputs.sha_short }}](https://github.com/${{ github.repository }}/commit/${{ github.sha }}) to [${{ github.repository }}](https://github.com/${{ github.repository }}) by [@${{ github.event.pusher.name }}](https://github.com/${{ github.event.pusher.name }})'
+          format: markdown
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+# TODO
+# 1. a separate file for this thing
+# 2. on push, pull_request, issue, comment, etc
+# 3. add event type to the message
+# 4. list of commits in message if many pushed
