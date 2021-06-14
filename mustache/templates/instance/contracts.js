@@ -38,7 +38,7 @@ const contracts = [
     currency: 'matic',
     name: 'Instance',
     address: '0x992A81FA34aa6ecD9520F39f858abc51fee6994a',
-  },  
+  },
 ];
 
 module.exports = contracts;
