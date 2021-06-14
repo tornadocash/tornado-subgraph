@@ -31,6 +31,14 @@ const contracts = [
     name: 'Instance',
     address: '0x1E34A77868E19A6647b1f2F47B51ed72dEDE95DD',
   },
+  {
+    prod: 15586940,
+    amount: '0.1',
+    network: 'matic',
+    currency: 'matic',
+    name: 'Instance',
+    address: '0x992A81FA34aa6ecD9520F39f858abc51fee6994a',
+  },  
 ];
 
 module.exports = contracts;

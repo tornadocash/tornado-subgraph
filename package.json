@@ -3,14 +3,19 @@
   "license": "UNLICENSED",
   "scripts": {
     "lint": "eslint .",
-    "generate": "yarn codegen:tornado && yarn build:tornado",
-    "yaml:tornado": "node ./create-yaml-file create-yaml -e bsc | mustache - mustache/yaml.mustache > subgraphs/tornado-subgraph.yaml",
+    "generate-bsc": "yarn codegen:tornado-bsc && yarn build:tornado-bsc",
+    "generate-matic": "yarn codegen:tornado-matic && yarn build:tornado-matic",
+    "yaml:tornado-bsc": "node ./create-yaml-file create-yaml -e bsc | mustache - mustache/yaml.mustache > subgraphs/tornado-subgraph-bsc.yaml",
+    "yaml:tornado-matic": "node ./create-yaml-file create-yaml -e matic | mustache - mustache/yaml.mustache > subgraphs/tornado-subgraph-matic.yaml",
     "codegen": "graph codegen",
-    "codegen:tornado": "yarn yaml:tornado && yarn codegen -- subgraphs/tornado-subgraph.yaml",
+    "codegen:tornado-bsc": "yarn yaml:tornado-bsc && yarn codegen -- subgraphs/tornado-subgraph-bsc.yaml",
+    "codegen:tornado-matic": "yarn yaml:tornado-matic && yarn codegen -- subgraphs/tornado-subgraph-matic.yaml",
     "build": "graph build",
-    "build:tornado": "graph build subgraphs/tornado-subgraph.yaml",
+    "build:tornado-bsc": "graph build subgraphs/tornado-subgraph-bsc.yaml",
+    "build:tornado-matic": "graph build subgraphs/tornado-subgraph-matic.yaml",
     "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ --access-token TOKEN",
-    "deploy:tornado": "yarn deploy -- tornadocash/bsc-tornado-subgraph subgraphs/tornado-subgraph.yaml"
+    "deploy:tornado-bsc": "yarn deploy -- tornadocash/bsc-tornado-subgraph subgraphs/tornado-subgraph-bsc.yaml",
+    "deploy:tornado-matic": "yarn deploy -- tornadocash/matic-tornado-subgraph subgraphs/tornado-subgraph-matic.yaml"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.20.0",
