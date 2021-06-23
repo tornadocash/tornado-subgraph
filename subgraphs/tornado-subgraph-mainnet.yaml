@@ -8,9 +8,9 @@
     name: Echoer
     network: mainnet
     source:
-      address: "0x756C4628E57F7e7f8a459EC2752968360Cf4D1AA"
+      address: "0x9B27DD5Bb15d42DC224FCD0B7caEbBe16161Df42"
       abi: Echoer
-      startBlock: 11362619
+      startBlock: 11842486
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
