@@ -166,7 +166,6 @@ const contracts = [
     name: 'Instance',
     address: '0x4736dCf1b7A3d580672CcE6E7c65cd5cc9cFBa9D',
   },
-
   {
     prod: deployedBlocks.mainnet,
     amount: '100',
