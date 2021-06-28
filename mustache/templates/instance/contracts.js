@@ -1,7 +1,7 @@
 const deployedBlocks = {
   goerli: 3781595,
   mainnet: 9116966,
-  matic: 15586940,
+  matic: 16257962,
   bsc: 8159290,
 };
 
@@ -40,11 +40,35 @@ const contracts = [
   },
   {
     prod: deployedBlocks.matic,
-    amount: '0.1',
+    amount: '100',
     network: 'matic',
     currency: 'matic',
     name: 'Instance',
-    address: '0x992A81FA34aa6ecD9520F39f858abc51fee6994a',
+    address: '0x1E34A77868E19A6647b1f2F47B51ed72dEDE95DD',
+  },
+  {
+    prod: deployedBlocks.matic,
+    amount: '1000',
+    network: 'matic',
+    currency: 'matic',
+    name: 'Instance',
+    address: '0xdf231d99Ff8b6c6CBF4E9B9a945CBAcEF9339178',
+  },
+  {
+    prod: deployedBlocks.matic,
+    amount: '10000',
+    network: 'matic',
+    currency: 'matic',
+    name: 'Instance',
+    address: '0xaf4c0B70B2Ea9FB7487C7CbB37aDa259579fe040',
+  },
+  {
+    prod: deployedBlocks.matic,
+    amount: '100000',
+    network: 'matic',
+    currency: 'matic',
+    name: 'Instance',
+    address: '0xa5C2254e4253490C54cef0a4347fddb8f75A4998',
   },
   {
     prod: deployedBlocks.mainnet,

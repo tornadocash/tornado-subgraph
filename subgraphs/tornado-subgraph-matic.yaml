@@ -8,9 +8,9 @@
     name: Echoer
     network: matic
     source:
-      address: "0x88Fb545DC03438b9FFb958361b7F3CfA6ce1B9c5"
+      address: "0xa75BF2815618872f155b7C4B0C81bF990f5245E4"
       abi: Echoer
-      startBlock: 15586935
+      startBlock: 16257996
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -25,12 +25,81 @@
         - event: Echo(indexed address,bytes)
           handler: handleEcho
   - kind: ethereum/contract
-    name: Instance-0.1-matic
+    name: Instance-100-matic
     network: matic
     source:
-      address: "0x992A81FA34aa6ecD9520F39f858abc51fee6994a"
+      address: "0x1E34A77868E19A6647b1f2F47B51ed72dEDE95DD"
       abi: Instance
-      startBlock: 15586940
+      startBlock: 16257962
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ../src/mapping-instance.ts
+      entities:
+        - Deposit
+        - Withdrawal
+      abis:
+        - name: Instance
+          file: ../abis/Instance.json
+      eventHandlers:
+        - event: Deposit(indexed bytes32,uint32,uint256)
+          handler: handleDeposit
+        - event: Withdrawal(address,bytes32,indexed address,uint256)
+          handler: handleWithdrawal
+  - kind: ethereum/contract
+    name: Instance-1000-matic
+    network: matic
+    source:
+      address: "0xdf231d99Ff8b6c6CBF4E9B9a945CBAcEF9339178"
+      abi: Instance
+      startBlock: 16257962
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ../src/mapping-instance.ts
+      entities:
+        - Deposit
+        - Withdrawal
+      abis:
+        - name: Instance
+          file: ../abis/Instance.json
+      eventHandlers:
+        - event: Deposit(indexed bytes32,uint32,uint256)
+          handler: handleDeposit
+        - event: Withdrawal(address,bytes32,indexed address,uint256)
+          handler: handleWithdrawal
+  - kind: ethereum/contract
+    name: Instance-10000-matic
+    network: matic
+    source:
+      address: "0xaf4c0B70B2Ea9FB7487C7CbB37aDa259579fe040"
+      abi: Instance
+      startBlock: 16257962
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ../src/mapping-instance.ts
+      entities:
+        - Deposit
+        - Withdrawal
+      abis:
+        - name: Instance
+          file: ../abis/Instance.json
+      eventHandlers:
+        - event: Deposit(indexed bytes32,uint32,uint256)
+          handler: handleDeposit
+        - event: Withdrawal(address,bytes32,indexed address,uint256)
+          handler: handleWithdrawal
+  - kind: ethereum/contract
+    name: Instance-100000-matic
+    network: matic
+    source:
+      address: "0xa5C2254e4253490C54cef0a4347fddb8f75A4998"
+      abi: Instance
+      startBlock: 16257962
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -51,9 +120,9 @@
     name: Proxy
     network: matic
     source:
-      address: "0xDC16d16341A62c60E7C9889F9d1FcE4cde57a90F"
+      address: "0x0D5550d52428E7e3175bfc9550207e4ad3859b17"
       abi: Proxy
-      startBlock: 15586930
+      startBlock: 16257989
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
