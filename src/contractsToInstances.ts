@@ -12,6 +12,9 @@ contractsToInstances.set("0x330bdfade01ee9bf63c209ee33102dd334618e0a", // Inst
 contractsToInstances.set("0x1e34a77868e19a6647b1f2f47b51ed72dede95dd", // Instance-bnb-100
   "bnb-100"
 );
+contractsToInstances.set("0x980c75f9b2a62d1206c2c146ae4aa1a19e4a21c0", // Instance-xdai-100
+  "xdai-100"
+);
 contractsToInstances.set("0x1e34a77868e19a6647b1f2f47b51ed72dede95dd", // Instance-matic-100
   "matic-100"
 );

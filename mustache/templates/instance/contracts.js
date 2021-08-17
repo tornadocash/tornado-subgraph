@@ -2,6 +2,7 @@ const deployedBlocks = {
   goerli: 3781595,
   mainnet: 9116966,
   matic: 16257962,
+  xdai: 17626717,
   bsc: 8159290,
 };
 
@@ -37,6 +38,14 @@ const contracts = [
     currency: 'bnb',
     name: 'Instance',
     address: '0x1E34A77868E19A6647b1f2F47B51ed72dEDE95DD',
+  },
+  {
+    prod: deployedBlocks.xdai,
+    amount: '100',
+    network: 'xdai',
+    currency: 'xdai',
+    name: 'Instance',
+    address: '0x980C75f9b2A62d1206C2C146aE4aa1a19E4A21C0',
   },
   {
     prod: deployedBlocks.matic,
