@@ -8,9 +8,9 @@
     name: Echoer
     network: xdai
     source:
-      address: "0xEd2B6bf192cFAb45810FC06c5E44e4Df48Eef47d"
+      address: "0xa75BF2815618872f155b7C4B0C81bF990f5245E4"
       abi: Echoer
-      startBlock: 17626717
+      startBlock: 17754564
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -28,9 +28,78 @@
     name: Instance-100-xdai
     network: xdai
     source:
-      address: "0x980C75f9b2A62d1206C2C146aE4aa1a19E4A21C0"
+      address: "0x1E34A77868E19A6647b1f2F47B51ed72dEDE95DD"
       abi: Instance
-      startBlock: 17626717
+      startBlock: 17754561
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ../src/mapping-instance.ts
+      entities:
+        - Deposit
+        - Withdrawal
+      abis:
+        - name: Instance
+          file: ../abis/Instance.json
+      eventHandlers:
+        - event: Deposit(indexed bytes32,uint32,uint256)
+          handler: handleDeposit
+        - event: Withdrawal(address,bytes32,indexed address,uint256)
+          handler: handleWithdrawal
+  - kind: ethereum/contract
+    name: Instance-1000-xdai
+    network: xdai
+    source:
+      address: "0xdf231d99Ff8b6c6CBF4E9B9a945CBAcEF9339178"
+      abi: Instance
+      startBlock: 17754561
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ../src/mapping-instance.ts
+      entities:
+        - Deposit
+        - Withdrawal
+      abis:
+        - name: Instance
+          file: ../abis/Instance.json
+      eventHandlers:
+        - event: Deposit(indexed bytes32,uint32,uint256)
+          handler: handleDeposit
+        - event: Withdrawal(address,bytes32,indexed address,uint256)
+          handler: handleWithdrawal
+  - kind: ethereum/contract
+    name: Instance-10000-xdai
+    network: xdai
+    source:
+      address: "0xaf4c0B70B2Ea9FB7487C7CbB37aDa259579fe040"
+      abi: Instance
+      startBlock: 17754561
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ../src/mapping-instance.ts
+      entities:
+        - Deposit
+        - Withdrawal
+      abis:
+        - name: Instance
+          file: ../abis/Instance.json
+      eventHandlers:
+        - event: Deposit(indexed bytes32,uint32,uint256)
+          handler: handleDeposit
+        - event: Withdrawal(address,bytes32,indexed address,uint256)
+          handler: handleWithdrawal
+  - kind: ethereum/contract
+    name: Instance-100000-xdai
+    network: xdai
+    source:
+      address: "0xa5C2254e4253490C54cef0a4347fddb8f75A4998"
+      abi: Instance
+      startBlock: 17754561
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4

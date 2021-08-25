@@ -9,7 +9,7 @@ const contracts = [
     prod: 17626717,
     name: 'Proxy',
     network: 'xdai',
-    address: '0xa77350E1a72bE5bC7634d359C5011b4E359f4320',
+    address: '0x0D5550d52428E7e3175bfc9550207e4ad3859b17',
   },
   {
     prod: 16257989,

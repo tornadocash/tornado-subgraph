@@ -12,8 +12,17 @@ contractsToInstances.set("0x330bdfade01ee9bf63c209ee33102dd334618e0a", // Inst
 contractsToInstances.set("0x1e34a77868e19a6647b1f2f47b51ed72dede95dd", // Instance-bnb-100
   "bnb-100"
 );
-contractsToInstances.set("0x980c75f9b2a62d1206c2c146ae4aa1a19e4a21c0", // Instance-xdai-100
+contractsToInstances.set("0x1e34a77868e19a6647b1f2f47b51ed72dede95dd", // Instance-xdai-100
   "xdai-100"
+);
+contractsToInstances.set("0xdf231d99ff8b6c6cbf4e9b9a945cbacef9339178", // Instance-xdai-1000
+  "xdai-1000"
+);
+contractsToInstances.set("0xaf4c0b70b2ea9fb7487c7cbb37ada259579fe040", // Instance-xdai-10000
+  "xdai-10000"
+);
+contractsToInstances.set("0xa5c2254e4253490c54cef0a4347fddb8f75a4998", // Instance-xdai-100000
+  "xdai-100000"
 );
 contractsToInstances.set("0x1e34a77868e19a6647b1f2f47b51ed72dede95dd", // Instance-matic-100
   "matic-100"

@@ -6,10 +6,10 @@ const contracts = [
     address: '0xa75BF2815618872f155b7C4B0C81bF990f5245E4',
   },
   {
-    prod: 17626717,
+    prod: 17754564,
     network: 'xdai',
     name: 'Echoer',
-    address: '0xEd2B6bf192cFAb45810FC06c5E44e4Df48Eef47d',
+    address: '0xa75BF2815618872f155b7C4B0C81bF990f5245E4',
   },
   {
     prod: 16257996,
