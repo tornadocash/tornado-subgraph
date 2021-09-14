@@ -29,6 +29,12 @@ const contracts = [
     network: 'goerli',
     address: '0x454d870a72e29d5e5697f635128d18077bd04c60',
   },
+  {
+    prod: 4285638,
+    name: 'Proxy',
+    network: 'avalanche',
+    address: '0xa77350E1a72bE5bC7634d359C5011b4E359f4320',
+  },
 ];
 
 module.exports = contracts;

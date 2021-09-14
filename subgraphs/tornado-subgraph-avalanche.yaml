@@ -1,0 +1,92 @@
+  specVersion: 0.0.2
+  description: Proxy
+  repository: https://github.com/tornadocash/tornado-subgraph
+  schema:
+    file: ../schema.graphql
+  dataSources:
+  - kind: ethereum/contract
+    name: Echoer
+    network: avalanche
+    source:
+      address: "0xEd2B6bf192cFAb45810FC06c5E44e4Df48Eef47d"
+      abi: Echoer
+      startBlock: 4285638
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ../src/mapping-echo-account.ts
+      entities:
+        - NoteAccount
+      abis:
+        - name: Echoer
+          file: ../abis/Echoer.json
+      eventHandlers:
+        - event: Echo(indexed address,bytes)
+          handler: handleEcho
+  - kind: ethereum/contract
+    name: Instance-0.1-avax
+    network: avalanche
+    source:
+      address: "0x25b5aD99DE3a1d713d3E5578413002ff6F89744d"
+      abi: Instance
+      startBlock: 4285638
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ../src/mapping-instance.ts
+      entities:
+        - Deposit
+        - Withdrawal
+      abis:
+        - name: Instance
+          file: ../abis/Instance.json
+      eventHandlers:
+        - event: Deposit(indexed bytes32,uint32,uint256)
+          handler: handleDeposit
+        - event: Withdrawal(address,bytes32,indexed address,uint256)
+          handler: handleWithdrawal
+  - kind: ethereum/contract
+    name: Instance-10-avax
+    network: avalanche
+    source:
+      address: "0x44139ab9F929CC10cdCEBddca8008e07ac52954E"
+      abi: Instance
+      startBlock: 4285638
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ../src/mapping-instance.ts
+      entities:
+        - Deposit
+        - Withdrawal
+      abis:
+        - name: Instance
+          file: ../abis/Instance.json
+      eventHandlers:
+        - event: Deposit(indexed bytes32,uint32,uint256)
+          handler: handleDeposit
+        - event: Withdrawal(address,bytes32,indexed address,uint256)
+          handler: handleWithdrawal
+  - kind: ethereum/contract
+    name: Proxy
+    network: avalanche
+    source:
+      address: "0xa77350E1a72bE5bC7634d359C5011b4E359f4320"
+      abi: Proxy
+      startBlock: 4285638
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ../src/mapping-encrypted-note.ts
+      entities:
+        - EncryptedNote
+      abis:
+        - name: Proxy
+          file: ../abis/Proxy.json
+      eventHandlers:
+        - event: EncryptedNote(indexed address,bytes)
+          handler: handleEncryptedNote

@@ -1,9 +1,10 @@
 const deployedBlocks = {
+  bsc: 8159290,
+  xdai: 17754561,
+  matic: 16257962,
   goerli: 3781595,
   mainnet: 9116966,
-  matic: 16257962,
-  xdai: 17754561,
-  bsc: 8159290,
+  avalanche: 4285638,
 };
 
 const contracts = [
@@ -407,6 +408,38 @@ const contracts = [
     name: 'Instance',
     address: '0x0E3A09dDA6B20aFbB34aC7cD4A6881493f3E7bf7',
   },
+  {
+    prod: deployedBlocks.avalanche,
+    amount: '0.1',
+    network: 'avalanche',
+    currency: 'avax',
+    name: 'Instance',
+    address: '0x25b5aD99DE3a1d713d3E5578413002ff6F89744d',
+  },
+  {
+    prod: deployedBlocks.avalanche,
+    amount: '10',
+    network: 'avalanche',
+    currency: 'avax',
+    name: 'Instance',
+    address: '0x44139ab9F929CC10cdCEBddca8008e07ac52954E',
+  },
+  // {
+  //   prod: deployedBlocks.avalanche,
+  //   amount: '100',
+  //   network: 'avalanche',
+  //   currency: 'avax',
+  //   name: 'Instance',
+  //   address: '',
+  // },
+  // {
+  //   prod: deployedBlocks.avalanche,
+  //   amount: '500',
+  //   network: 'avalanche',
+  //   currency: 'avax',
+  //   name: 'Instance',
+  //   address: '',
+  // },
 ];
 
 module.exports = contracts;
