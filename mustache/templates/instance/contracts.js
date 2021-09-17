@@ -4,7 +4,7 @@ const deployedBlocks = {
   matic: 16257962,
   goerli: 3781595,
   mainnet: 9116966,
-  avalanche: 4285638,
+  avalanche: 4429818,
 };
 
 const contracts = [
@@ -410,36 +410,28 @@ const contracts = [
   },
   {
     prod: deployedBlocks.avalanche,
-    amount: '0.1',
-    network: 'avalanche',
-    currency: 'avax',
-    name: 'Instance',
-    address: '0x25b5aD99DE3a1d713d3E5578413002ff6F89744d',
-  },
-  {
-    prod: deployedBlocks.avalanche,
     amount: '10',
     network: 'avalanche',
     currency: 'avax',
     name: 'Instance',
-    address: '0x44139ab9F929CC10cdCEBddca8008e07ac52954E',
+    address: '0x330bdFADE01eE9bF63C209Ee33102DD334618e0a',
   },
-  // {
-  //   prod: deployedBlocks.avalanche,
-  //   amount: '100',
-  //   network: 'avalanche',
-  //   currency: 'avax',
-  //   name: 'Instance',
-  //   address: '',
-  // },
-  // {
-  //   prod: deployedBlocks.avalanche,
-  //   amount: '500',
-  //   network: 'avalanche',
-  //   currency: 'avax',
-  //   name: 'Instance',
-  //   address: '',
-  // },
+  {
+    prod: deployedBlocks.avalanche,
+    amount: '100',
+    network: 'avalanche',
+    currency: 'avax',
+    name: 'Instance',
+    address: '0x1E34A77868E19A6647b1f2F47B51ed72dEDE95DD',
+  },
+  {
+    prod: deployedBlocks.avalanche,
+    amount: '500',
+    network: 'avalanche',
+    currency: 'avax',
+    name: 'Instance',
+    address: '0xaf8d1839c3c67cf571aa74B5c12398d4901147B3',
+  },
 ];
 
 module.exports = contracts;
