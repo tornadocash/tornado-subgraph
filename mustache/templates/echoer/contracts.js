@@ -30,10 +30,10 @@ const contracts = [
     address: '0x37e6859804b6499d1e4a86d70a5fdd5de6a0ac65',
   },
   {
-    prod: 4285638,
+    prod: 4429813,
     network: 'avalanche',
     name: 'Echoer',
-    address: '0xEd2B6bf192cFAb45810FC06c5E44e4Df48Eef47d',
+    address: '0xa75BF2815618872f155b7C4B0C81bF990f5245E4',
   },
 ];
 

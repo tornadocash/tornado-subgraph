@@ -8,9 +8,9 @@
     name: Echoer
     network: avalanche
     source:
-      address: "0xEd2B6bf192cFAb45810FC06c5E44e4Df48Eef47d"
+      address: "0xa75BF2815618872f155b7C4B0C81bF990f5245E4"
       abi: Echoer
-      startBlock: 4285638
+      startBlock: 4429813
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -25,12 +25,12 @@
         - event: Echo(indexed address,bytes)
           handler: handleEcho
   - kind: ethereum/contract
-    name: Instance-0.1-avax
+    name: Instance-10-avax
     network: avalanche
     source:
-      address: "0x25b5aD99DE3a1d713d3E5578413002ff6F89744d"
+      address: "0x330bdFADE01eE9bF63C209Ee33102DD334618e0a"
       abi: Instance
-      startBlock: 4285638
+      startBlock: 4429818
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -48,12 +48,35 @@
         - event: Withdrawal(address,bytes32,indexed address,uint256)
           handler: handleWithdrawal
   - kind: ethereum/contract
-    name: Instance-10-avax
+    name: Instance-100-avax
     network: avalanche
     source:
-      address: "0x44139ab9F929CC10cdCEBddca8008e07ac52954E"
+      address: "0x1E34A77868E19A6647b1f2F47B51ed72dEDE95DD"
       abi: Instance
-      startBlock: 4285638
+      startBlock: 4429818
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ../src/mapping-instance.ts
+      entities:
+        - Deposit
+        - Withdrawal
+      abis:
+        - name: Instance
+          file: ../abis/Instance.json
+      eventHandlers:
+        - event: Deposit(indexed bytes32,uint32,uint256)
+          handler: handleDeposit
+        - event: Withdrawal(address,bytes32,indexed address,uint256)
+          handler: handleWithdrawal
+  - kind: ethereum/contract
+    name: Instance-500-avax
+    network: avalanche
+    source:
+      address: "0xaf8d1839c3c67cf571aa74B5c12398d4901147B3"
+      abi: Instance
+      startBlock: 4429818
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -74,9 +97,9 @@
     name: Proxy
     network: avalanche
     source:
-      address: "0xa77350E1a72bE5bC7634d359C5011b4E359f4320"
+      address: "0x0D5550d52428E7e3175bfc9550207e4ad3859b17"
       abi: Proxy
-      startBlock: 4285638
+      startBlock: 4429818
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
