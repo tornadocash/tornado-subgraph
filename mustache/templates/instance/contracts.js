@@ -4,6 +4,7 @@ const deployedBlocks = {
   matic: 16257962,
   goerli: 3781595,
   mainnet: 9116966,
+  arbitrum: 3430648,
   avalanche: 4429818,
 };
 
@@ -431,6 +432,38 @@ const contracts = [
     currency: 'avax',
     name: 'Instance',
     address: '0xaf8d1839c3c67cf571aa74B5c12398d4901147B3',
+  },
+  {
+    prod: deployedBlocks.arbitrum,
+    amount: '0.1',
+    network: 'arbitrum-one',
+    currency: 'eth',
+    name: 'Instance',
+    address: '0x84443CFd09A48AF6eF360C6976C5392aC5023a1F',
+  },
+  {
+    prod: deployedBlocks.arbitrum,
+    amount: '1',
+    network: 'arbitrum-one',
+    currency: 'eth',
+    name: 'Instance',
+    address: '0xd47438C816c9E7f2E2888E060936a499Af9582b3',
+  },
+  {
+    prod: deployedBlocks.arbitrum,
+    amount: '10',
+    network: 'arbitrum-one',
+    currency: 'eth',
+    name: 'Instance',
+    address: '0x330bdFADE01eE9bF63C209Ee33102DD334618e0a',
+  },
+  {
+    prod: deployedBlocks.arbitrum,
+    amount: '100',
+    network: 'arbitrum-one',
+    currency: 'eth',
+    name: 'Instance',
+    address: '0x1E34A77868E19A6647b1f2F47B51ed72dEDE95DD',
   },
 ];
 

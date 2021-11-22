@@ -35,6 +35,12 @@ const contracts = [
     network: 'avalanche',
     address: '0x0D5550d52428E7e3175bfc9550207e4ad3859b17',
   },
+  {
+    prod: 3430648,
+    name: 'Proxy',
+    network: 'arbitrum-one',
+    address: '0x0D5550d52428E7e3175bfc9550207e4ad3859b17',
+  },
 ];
 
 module.exports = contracts;
