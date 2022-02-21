@@ -41,6 +41,12 @@ const contracts = [
     name: 'Echoer',
     address: '0xa75BF2815618872f155b7C4B0C81bF990f5245E4',
   },
+  {
+    prod: 2243694,
+    network: 'optimism',
+    name: 'Echoer',
+    address: '0xa75BF2815618872f155b7C4B0C81bF990f5245E4',
+  },
 ];
 
 module.exports = contracts;
