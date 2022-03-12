@@ -30,6 +30,7 @@ export function handleDeposit(event: Deposit): void {
   entity.amount = result[1];
   entity.currency = result[0];
 
+  entity.from = event.address;
   entity.index = event.params.leafIndex;
   entity.blockNumber = event.block.number;
   entity.timestamp = event.block.timestamp;
