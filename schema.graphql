@@ -1,5 +1,6 @@
 type Deposit @entity {
   id: ID!
+  from: Bytes!
   index: BigInt!
   amount: String!
   currency: String!
